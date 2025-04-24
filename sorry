@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I'm Sorry 🐰</title>
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: #fce4ec;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    h1 {
+      color: #d81b60;
+    }
+
+    .bunny {
+      font-size: 100px;
+    }
+
+    .sorry-sign {
+      background-color: #fff3f3;
+      display: inline-block;
+      padding: 20px 40px;
+      border: 3px dashed #f06292;
+      border-radius: 10px;
+      font-size: 24px;
+      margin-top: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .buttons {
+      margin-top: 40px;
+      position: relative;
+      height: 150px;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 10px 25px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .yes {
+      background-color: #81c784;
+      color: white;
+    }
+
+    .yes:hover {
+      background-color: #66bb6a;
+    }
+
+    .no {
+      background-color: #e57373;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Will You Forgive Me?</h1>
+
+  <div class="bunny">🐰</div>
+  <div class="sorry-sign">I'm Really Sorry 😔</div>
+
+  <div class="buttons">
+    <button class="yes" onclick="alert('Yay! Thank you! 💖')">Yes</button>
+    <button class="no" id="noBtn">No</button>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById('noBtn');
+
+    function moveButton() {
+      const maxX = window.innerWidth - noBtn.offsetWidth;
+      const maxY = 120; // keep it within the button container
+      const randX = Math.random() * maxX;
+      const randY = Math.random() * maxY;
+      noBtn.style.left = `${randX}px`;
+      noBtn.style.top = `${randY}px`;
+    }
+
+    noBtn.addEventListener('mouseover', moveButton);
+    noBtn.addEventListener('click', moveButton);
+  </script>
+
+</body>
+</html>
